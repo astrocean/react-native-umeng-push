@@ -33,8 +33,10 @@ module.exports = () => {
     // 1. Add the Config Umeng
     var configInit = `
       //可不传 channel:string,默认为 ：DEFAULT_CHANNEL_ANDROID
-      //可不传 type: int,默认为：UMConfigure.DEVICE_TYPE_PHONE，可通过 DplusReactPackage.UMCONFIG.DEVICE_TYPE_XXX 设置值
-      DplusReactPackage.ConfigInit( this,"<appKey>","<pushSecret>",<channel>,<type>);
+      //可不传 type: int,默认为：UMConfigure.DEVICE_TYPE_PHONE，其他值：UMConfigure.DEVICE_TYPE_BOX（盒子），可通过 DplusReactPackage.UMCONFIG.DEVICE_TYPE_XXX 设置值
+      DplusReactPackage.ConfigInit( this,"<appKey服务后台位置：应用管理 -> 应用信息 -> Appkey>","<pushSecret 替换为秘钥信息,服务后台位置：应用管理 -> 应用信息 -> Umeng Message Secret>",<channel>,<type>);
+
+      //DplusReactPackage.ConfigXiaoMi("<XIAOMI_ID>","<XIAOMI_KEY>");
     `;
 
     function isAlreadyOverridden(codeContents) {

@@ -1,5 +1,14 @@
 import { NativeModules } from 'react-native';
 
-const { RNUmengPush } = NativeModules;
+const { UMPushModule } = NativeModules;
 
-export default RNUmengPush;
+const UmengPush={
+  UMPushModule,
+  getDeviceTocken:(handler: Function)=>{
+    UMPushModule.getDeviceToken((state:String,deviceToken:String)=>{
+      handler&&handler(state,deviceToken);
+    });
+  }
+}
+
+export default UmengPush;

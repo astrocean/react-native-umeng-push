@@ -33,6 +33,8 @@
       compile project(':react-native-umeng-push')
   	```
 
+ 
+
 
 ## Usage
 ```javascript

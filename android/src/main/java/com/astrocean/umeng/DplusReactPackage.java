@@ -23,23 +23,38 @@ public class DplusReactPackage implements ReactPackage {
     public static final String DEFAULT_CHANNEL = "DEFAULT_CHANNEL_ANDROID";
     public static final Int DEFAULT_DEVICE_TYPE = UMConfigure.DEVICE_TYPE_PHONE;
 
-    // RNUMConfture.init接口一共五个参数，其中第一个参数为Context，第二个参数为友盟Appkey，第三个参数为channel，第四个参数为应用类型（手机或平板），第五个参数为push的secret（如果没有使用push，可以为空）。
+    // 在此处调用基础组件包提供的初始化函数 相应信息可在应用管理 -> 应用信息 中找到 http://message.umeng.com/list/apps
+    // 参数一：当前上下文context；
+    // 参数二：应用申请的Appkey（需替换）；
+    // 参数三：渠道名称；
+    // 参数四：设备类型，必须参数，传参数为UMConfigure.DEVICE_TYPE_PHONE则表示手机；传参数为UMConfigure.DEVICE_TYPE_BOX则表示盒子；默认为手机；
+    // 参数五：Push推送业务的secret 填充Umeng Message Secret对应信息（需替换）
+    // UMConfigure.init(this, "替换为Appkey,服务后台位置：应用管理 -> 应用信息 -> Appkey", "Umeng", UMConfigure.DEVICE_TYPE_PHONE, "替换为秘钥信息,服务后台位置：应用管理 -> 应用信息 -> Umeng Message Secret");
+    public static void InitConfigure(Context context,String appKey,String pushSecret,String channel,int type){
+        RNUMConfigure.init(context, appKey,_channel,type,pushSecret);
+        //push注册
+        PushModule.register();
+    }
+    public static void ConfigXiaoMi(String xiaoMIID,String xiaoMiKey){
+        PushModule.XIAOMI_ID=xiaoMIID;
+        PushModule.XIAOMI_KEY=xiaoMiKey;
+    }
     public static void ConfigInit(Context context,String appKey,String pushSecret) {
-        RNUMConfigure.init(context, appKey, DplusReactPackage.DEFAULT_CHANNEL, DplusReactPackage.DEFAULT_DEVICE_TYPE,pushSecret);
+        DplusReactPackage.InitConfigure(context, appKey, DplusReactPackage.DEFAULT_CHANNEL, DplusReactPackage.DEFAULT_DEVICE_TYPE,pushSecret);
     }
     public static void ConfigInit(Context context,String appKey,String pushSecret,String channel) {
         String _channel=channel;
         if(channel==null){
             _channel=DplusReactPackage.DEFAULT_CHANNEL;
         }
-        RNUMConfigure.init(context, appKey,_channel, UMConfigure.DEVICE_TYPE_PHONE,pushSecret);
+        DplusReactPackage.InitConfigure(context, appKey,_channel, UMConfigure.DEVICE_TYPE_PHONE,pushSecret);
     }
     public static void ConfigInit(Context context,String appKey,String pushSecret,String channel,int type) {
         String _channel=channel;
         if(channel==null){
             _channel=DplusReactPackage.DEFAULT_CHANNEL;
         }
-        RNUMConfigure.init(context, appKey,_channel,type,pushSecret);
+        DplusReactPackage.InitConfigure(context, appKey,_channel,type,pushSecret);
     }
 
     
