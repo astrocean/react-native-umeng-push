@@ -1,0 +1,33 @@
+{
+  "name": "react-native-umeng-push",
+  "title": "React Native Umeng Push",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astrocean/react-native-umeng-push.git",
+    "baseUrl": "https://github.com/astrocean/react-native-umeng-push"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": {
+    "name": "astrocean",
+    "email": "rftstars@qq.com"
+  },
+  "license": "Apache-2.0",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "^16.6.3",
+    "react-native": "^0.58.6"
+  },
+  "devDependencies": {
+    "react": "^16.6.3",
+    "react-native": "^0.58.6"
+  }
+}
