@@ -9,12 +9,12 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                   RNUmengPush
                    DESC
-  s.homepage     = "https://github.com/author/RNUmengPush"
+  s.homepage     = "https://github.com/astrocean/react-native-umeng-push"
   s.license      = "MIT"
   # s.license    = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.author       = { "author" => "author@domain.cn" }
+  s.author       = { "author" => "rftstars@qq.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/author/RNUmengPush.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/astrocean/react-native-umeng-push.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m}"
   s.requires_arc = true
@@ -23,3 +23,6 @@ Pod::Spec.new do |s|
   #s.dependency "others"
 end
 
+pod 'UMCCommon'
+pod 'UMCPush'
+pod 'UMCSecurityPlugins'
