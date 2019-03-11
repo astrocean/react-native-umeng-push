@@ -45,6 +45,8 @@ repositories {
         // Matches the RN Hello World template
         // https://github.com/facebook/react-native/blob/1e8f3b11027fe0a7514b4fc97d0798d3c64bc895/local-cli/templates/HelloWorld/android/build.gradle#L21
         url "$projectDir/../node_modules/react-native/android"
+    }
+     maven {
         url 'https://dl.bintray.com/umsdk/release'
     }
     mavenCentral()
@@ -72,7 +74,7 @@ dependencies {
 
     //魅族Push通道
     implementation 'com.umeng.umsdk:meizu-push:3.8.1'
-    implementation 'com.umeng.umsdk:meizu-umengaccs:1.0.6
+    implementation 'com.umeng.umsdk:meizu-umengaccs:1.0.6'
 }
 
 def configureReactNativePom(def pom) {
@@ -82,7 +84,7 @@ def configureReactNativePom(def pom) {
         name packageJson.title
         artifactId packageJson.name
         version = packageJson.version
-        group = "com.reactlibrary"
+        group = "com.astrocean.umeng"
         description packageJson.description
         url packageJson.repository.baseUrl
 
