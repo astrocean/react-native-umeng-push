@@ -19,10 +19,10 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m}"
   s.requires_arc = true
 
-  s.dependency "React"
+  #s.dependency "React"
   #s.dependency "others"
-end
 
-pod 'UMCCommon'
-pod 'UMCPush'
-pod 'UMCSecurityPlugins'
+  s.dependency 'UMCCommon'
+  s.dependency 'UMCPush'
+  s.dependency 'UMCSecurityPlugins'
+end
