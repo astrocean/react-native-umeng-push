@@ -30,7 +30,7 @@
     "glob": "^5.0.15",
     "hoist-non-react-statics": "^2.3.1",
     "inquirer": "1.1.2",
-    "plist": "3.0.1",
+    "plist": "3.0.4",
     "xcode": "1.0.0"
   },
   "rnpm": {
